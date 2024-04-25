@@ -1,0 +1,22 @@
+//Repositório do Projeto
+https://github.com/cod3rcursos/javascript-funcional
+=============================================================
+
+https://github.com/wendelanchieta/javascript-funcional-reativo.git
+
+?or create a new repository on the command line
+
+echo "# javascript-funcional-reativo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/wendelanchieta/javascript-funcional-reativo.git
+git push -u origin main
+
+=============================================================
+?or push an existing repository from the command line
+
+git remote add origin https://github.com/wendelanchieta/javascript-funcional-reativo.git
+git branch -M main
+git push -u origin main
