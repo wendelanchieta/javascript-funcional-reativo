@@ -1,6 +1,20 @@
 const fs = require("fs");
 const path = require("path");
 
+function composicao(...fns) {
+  return function (valor) {
+    // reduce(acumulador, funcao atual)
+    return fns.reduce(async (acc, fn) => {
+      // é passado o valor do acumulador para a proxima função
+      if (Promise.resolve(acc) === acc) {
+        return fn(await acc);
+      } else {
+        return fn(acc);
+      }
+    }, valor);
+  };
+}
+
 function lerDiretorio(caminho) {
   return new Promise((resolve, reject) => {
     try {
@@ -19,8 +33,16 @@ function lerDiretorio(caminho) {
   console.log(arquivos);*/
 }
 
-function elementosTerminadoCom(array, padraoTextual) {
+/*function elementosTerminadoCom(array, padraoTextual) {
   return array.filter((el) => el.endsWith(padraoTextual));
+}
+ // Chamada: .then((arquivos) => fn.elementosTerminadoCom(arquivos, ".srt"))
+*/
+
+function elementosTerminadoCom(padraoTextual) {
+  return function (array) {
+    return array.filter((el) => el.endsWith(padraoTextual));
+  };
 }
 
 function lerArquivo(caminho) {
@@ -100,6 +122,7 @@ function ordenarPorAtribNumerico(attr, ordem = "asc") {
 }
 
 module.exports = {
+  composicao,
   lerDiretorio,
   elementosTerminadoCom,
   lerArquivo,

@@ -20,7 +20,7 @@ const simbolos = [
 ];
 
 fn.lerDiretorio(caminho)
-  .then((arquivos) => fn.elementosTerminadoCom(arquivos, ".srt"))
+  .then(fn.elementosTerminadoCom(".srt"))
   .then(fn.lerArquivos)
   .then(fn.mesclarElementos)
   .then(fn.separarTextoPor("\n"))
