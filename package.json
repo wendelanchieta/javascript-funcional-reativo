@@ -1,0 +1,23 @@
+{
+  "name": "javascript-funcional-e-reativo",
+  "version": "1.0.0",
+  "description": "## PARADIGMA FUNCIONAL e PROGRAMAÇÃO REATIVA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wendelanchieta/javascript-funcional-reativo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wendelanchieta/javascript-funcional-reativo/issues"
+  },
+  "homepage": "https://github.com/wendelanchieta/javascript-funcional-reativo#readme",
+  "dependencies": {
+    "rxjs": "^7.8.1"
+  }
+}
